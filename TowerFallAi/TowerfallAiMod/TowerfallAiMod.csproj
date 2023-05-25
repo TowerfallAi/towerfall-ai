@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">DebugLinux</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TowerfallAiMod</RootNamespace>
+    <AssemblyName>TowerfallAiMod</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'PatchWindows|AnyCPU' ">
+    <OutputPath>..\bin\PatchWindows</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <ConsolePause>true</ConsolePause>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Condition=" '$(Configuration)|$(Platform)' == 'PatchWindows|AnyCPU' " Include="Microsoft.Xna.Framework" />
+    <Reference Condition=" '$(Configuration)|$(Platform)' == 'PatchWindows|AnyCPU' " Include="Microsoft.Xna.Framework.Game" />
+    <Reference Condition=" '$(Configuration)|$(Platform)' == 'PatchWindows|AnyCPU' " Include="Microsoft.Xna.Framework.Graphics" />
+    <Reference Condition=" '$(Configuration)|$(Platform)' == 'PatchWindows|AnyCPU' " Include="Microsoft.Xna.Framework.Net" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.IO, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Condition=" '$(Configuration)|$(Platform)' == 'PatchWindows|AnyCPU' " Include="TowerFallWindows">
+      <HintPath>..\bin\PatchWindows\Patcher\Unsealed\TowerFall.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\State.cs" />
+    <Compile Include="Api\StateSubType.cs" />
+    <Compile Include="Api\StateReaperBeam.cs" />
+    <Compile Include="Api\StateKingReaper.cs" />
+    <Compile Include="Common\AsyncQueue.cs" />
+    <Compile Include="Common\DoubleDictionary.cs" />
+    <Compile Include="Common\TaskExtensions.cs" />
+    <Compile Include="Core\AiMod.cs" />
+    <Compile Include="Core\AgentConnection.cs" />
+    <Compile Include="Core\AgentConnectionRemote.cs" />
+    <Compile Include="Core\Agents.cs" />
+    <Compile Include="Core\EntityCreator.cs" />
+    <Compile Include="Core\SandboxLevelSystem.cs" />
+    <Compile Include="Core\OperationException.cs" />
+    <Compile Include="Core\ConfigException.cs" />
+    <Compile Include="Core\ConnectionDispatcher.cs" />
+    <Compile Include="Core\KeyboardConfigs.cs" />
+    <Compile Include="Core\MessageException.cs" />
+    <Compile Include="Core\RemoteConnection.cs" />
+    <Compile Include="Core\Server.cs" />
+    <Compile Include="Core\Sound.cs" />
+    <Compile Include="Data\AgentConfig.cs" />
+    <Compile Include="Core\AgentConfigExtension.cs" />
+    <Compile Include="Api\StateEntity.cs" />
+    <Compile Include="Api\StateArrow.cs" />
+    <Compile Include="Api\StateChest.cs" />
+    <Compile Include="Api\StateCrackedWall.cs" />
+    <Compile Include="Api\StateFalling.cs" />
+    <Compile Include="Api\StateHat.cs" />
+    <Compile Include="Api\StateInit.cs" />
+    <Compile Include="Api\StateItem.cs" />
+    <Compile Include="Api\StateLava.cs" />
+    <Compile Include="Api\StateMiasma.cs" />
+    <Compile Include="Api\StateArcher.cs" />
+    <Compile Include="Api\StateProximityBlock.cs" />
+    <Compile Include="Api\StateScenario.cs" />
+    <Compile Include="Api\StateShiftBlock.cs" />
+    <Compile Include="Api\StateSpikeBall.cs" />
+    <Compile Include="Api\StateSwitchBlock.cs" />
+    <Compile Include="Api\StateUpdate.cs" />
+    <Compile Include="Api\Types.cs" />
+    <Compile Include="Api\Vec2.cs" />
+    <Compile Include="Data\Message.cs" />
+    <Compile Include="Data\GameModes.cs" />
+    <Compile Include="Data\MatchConfig.cs" />
+    <Compile Include="Data\Metadata.cs" />
+    <Compile Include="Mod\ArrowTypePickup.cs" />
+    <Compile Include="Mod\Cultist.cs" />
+    <Compile Include="Mod\Birdman.cs" />
+    <Compile Include="Mod\Ghost.cs" />
+    <Compile Include="Mod\PauseMenu.cs" />
+    <Compile Include="Mod\Slime.cs" />
+    <Compile Include="Mod\ReaperCrystal.cs" />
+    <Compile Include="Mod\ReaperBomb.cs" />
+    <Compile Include="Mod\ReaperBeam.cs" />
+    <Compile Include="Mod\KingReaper.cs" />
+    <Compile Include="Mod\EvilCrystal.cs" />
+    <Compile Include="Mod\Skeleton.cs" />
+    <Compile Include="Mod\PlayerCorpse.cs" />
+    <Compile Include="Mod\Enemy.cs" />
+    <Compile Include="Mod\Bat.cs" />
+    <Compile Include="Mod\MenuInput.cs" />
+    <Compile Include="Mod\EnemyAttack.cs" />
+    <Compile Include="Mod\QuestSpawnPortal.cs" />
+    <Compile Include="Mod\TreasureChest.cs" />
+    <Compile Include="Mod\SwitchBlock.cs" />
+    <Compile Include="Mod\SuperBombArrow.cs" />
+    <Compile Include="Mod\BombArrow.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\CustomLogger.cs" />
+    <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="Common\Util.cs" />
+    <Compile Include="Mod\CrackedPlatform.cs" />
+    <Compile Include="Mod\SpikeBall.cs" />
+    <Compile Include="Mod\ShiftBlock.cs" />
+    <Compile Include="Mod\ProximityBlock.cs" />
+    <Compile Include="Mod\OrbPickup.cs" />
+    <Compile Include="Mod\Orb.cs" />
+    <Compile Include="Mod\Miasma.cs" />
+    <Compile Include="Mod\Lava.cs" />
+    <Compile Include="Mod\Lantern.cs" />
+    <Compile Include="Mod\Icicle.cs" />
+    <Compile Include="Mod\FloorMiasma.cs" />
+    <Compile Include="Mod\DefaultHat.cs" />
+    <Compile Include="Mod\CrackedWall.cs" />
+    <Compile Include="Mod\Entity.cs" />
+    <Compile Include="Mod\Level.cs" />
+    <Compile Include="Mod\Player.cs" />
+    <Compile Include="Mod\Session.cs" />
+    <Compile Include="Mod\TFGame.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PatcherLib\PatcherLib.csproj">
+      <Project>{fae08b42-bbe6-4177-9110-6dde1032c415}</Project>
+      <Name>PatcherLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

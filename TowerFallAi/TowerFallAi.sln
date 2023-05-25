@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patcher", "Patcher\Patcher.csproj", "{B1DF3728-5F4C-4987-8213-4DCE21255B0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A} = {5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerfallAiMod", "TowerfallAiMod\TowerfallAiMod.csproj", "{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatcherLib", "PatcherLib\PatcherLib.csproj", "{FAE08B42-BBE6-4177-9110-6DDE1032C415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerfallAiModTests", "TowerfallAiModTests\TowerfallAiModTests.csproj", "{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		MakeBaseImageWindows|Any CPU = MakeBaseImageWindows|Any CPU
+		MakeBaseImageWindows|x86 = MakeBaseImageWindows|x86
+		PatchWindows|Any CPU = PatchWindows|Any CPU
+		PatchWindows|x86 = PatchWindows|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.MakeBaseImageWindows|Any CPU.ActiveCfg = MakeBaseImageWindows|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.MakeBaseImageWindows|Any CPU.Build.0 = MakeBaseImageWindows|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.MakeBaseImageWindows|x86.ActiveCfg = MakeBaseImage|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.MakeBaseImageWindows|x86.Build.0 = MakeBaseImage|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.PatchWindows|Any CPU.ActiveCfg = PatchWindows|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.PatchWindows|Any CPU.Build.0 = PatchWindows|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.PatchWindows|x86.ActiveCfg = Patch|x86
+		{B1DF3728-5F4C-4987-8213-4DCE21255B0F}.PatchWindows|x86.Build.0 = Patch|x86
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.MakeBaseImageWindows|Any CPU.ActiveCfg = PatchWindows|Any CPU
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.MakeBaseImageWindows|x86.ActiveCfg = Debug|Any CPU
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.MakeBaseImageWindows|x86.Build.0 = Debug|Any CPU
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.PatchWindows|Any CPU.ActiveCfg = PatchWindows|Any CPU
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.PatchWindows|Any CPU.Build.0 = PatchWindows|Any CPU
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.PatchWindows|x86.ActiveCfg = Patch|Any CPU
+		{5C1AA190-DD28-41A1-8DD2-FEF3A9DEE28A}.PatchWindows|x86.Build.0 = Patch|Any CPU
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.MakeBaseImageWindows|Any CPU.ActiveCfg = PatchWindows|x86
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.MakeBaseImageWindows|x86.ActiveCfg = Debug|x86
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.MakeBaseImageWindows|x86.Build.0 = Debug|x86
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.PatchWindows|Any CPU.ActiveCfg = PatchWindows|x86
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.PatchWindows|Any CPU.Build.0 = PatchWindows|x86
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.PatchWindows|x86.ActiveCfg = Patch|x86
+		{FAE08B42-BBE6-4177-9110-6DDE1032C415}.PatchWindows|x86.Build.0 = Patch|x86
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.MakeBaseImageWindows|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.MakeBaseImageWindows|Any CPU.Build.0 = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.MakeBaseImageWindows|x86.ActiveCfg = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.MakeBaseImageWindows|x86.Build.0 = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.PatchWindows|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.PatchWindows|Any CPU.Build.0 = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.PatchWindows|x86.ActiveCfg = Debug|Any CPU
+		{19CFA5FC-A793-46EF-9F34-88F6C9D8C19F}.PatchWindows|x86.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12C54BD4-0FFF-4AB2-8A9D-D85C13A493FD}
+	EndGlobalSection
+EndGlobal
