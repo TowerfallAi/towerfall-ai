@@ -9,7 +9,7 @@ Only tested on Windows at the moment.
 
 * Locate `TowerFall.exe` in the game directory. To find it, go to Steam, right-click the game and navigate to `Properties > Local Files > Browse...`
 
-* Download the mod from releases (TODO add release link), unzip all its contents in the game directory. Make sure they are in the same directory as `TowerFall.exe`.
+* Download the mod from the latest [release](../../releases), unzip all its contents in the game directory. Make sure they are in the same directory as `TowerFall.exe`.
 
 * Make sure the game is not running, then execute `Patcher.exe`. This will overwrite `TowerFall.exe`.
 
@@ -57,17 +57,17 @@ After a few seconds, the game window will open and the match will start. Take a 
 
 Notice that when the match ends, you can select rematch, but all other options will lead you to a **purple screen**. That is expected, and it means the game is waiting for a new connection. For now, this mod does not support navigating through UIs of the game.
 
-**Note:** You can still edit game options (like sound volume) by editing `tf_savedata` file manually.
+**Note:** You can still edit game options (like sound volume) by editing the `tf_savedata` file manually.
 
 A match can be programmatically started in many configurations. Give each one of the other examples a try to see a few options:
-- `run_simple_agent_quest.py`
-- `run_simple_agent_sandbox.py`
-- `run_simple_agent_versus_2v2.py`
-- `run_simple_agent_versus_human.py`
+- [run_simple_agent_quest.py](./python/run_simple_agent_quest.py)
+- [run_simple_agent_sandbox.py](./python/run_simple_agent_sandbox.py)
+- [run_simple_agent_versus_2v2.py](./python/run_simple_agent_versus_2v2.py)
+- [run_simple_agent_versus_human.py](./python/run_simple_agent_versus_human.py)
 
 ## Code example walkthrough
 
-Now that you saw it working, lets walk through one of the examples and learn how to use the API. Inspect the contents of [python/run_simple_agent_versus.py](TODO include link).
+Now that you saw it working, lets walk through one of the examples and learn how to use the API. Inspect the contents of [run_simple_agent_versus.py](./python/run_simple_agent_versus.py).
 
 First step is creating an instance of `Towerfall`. It is a client that talks to the game (which itself acts as a server). The key part here is the `config`. That is how you select the `mode`, the `level`, number of agents, etc.
 
@@ -111,11 +111,11 @@ while True:
 
 **Note:** The server communicates with each connection independently, so you **have** to read the game_state from all of them (if you don't, the socket buffer can become full over time and the connection will eventually fail).
 
-`SimpleAgent` is a minimalist implementation of an agent that shows how to read the state, make a decision, and reply with actions. The code in [python/agents/simple_agents.py](TODO include link) is extensively explained with comments, so take some time to read it thoroughly. It is a good place to start by making small improvements, like:
+`SimpleAgent` is a minimalist implementation of an agent that shows how to read the state, make a decision, and reply with actions. The code in [python/agents/simple_agents.py](./python/agents/simple_agents.py) is extensively explained with comments, so take some time to read it thoroughly. It is a good place to start by making small improvements, like:
 
 * Shoot in more directions.
 * Dodge arrows.
-* Shoot only when there is no wall in between. Check [scenario](TODO add link) message.
+* Shoot only when there is no wall in between. Check [scenario](#scenario) message.
 
 Once you are comfortable with the basics, read the [API](#api) section for more information.
 
@@ -313,10 +313,10 @@ This can be either the archer that player/agent controls, or the enemy archers t
       // toy
       // trigger
   "state": "shooting", // Possible states
-      // buried: TODO
+      // buried
       // drilling: Specific for drill arrows when they go are digging through walls.
-      // galling: TODO
-      // gravity: TODO
+      // galling
+      // gravity
       // layingOnGround: It can be picked up
       // shooting: Arrow is mid air.
       // stuck: It can be picked up
@@ -669,7 +669,7 @@ The game (server) and the agent (client) exchange messages over socket in the fo
 * `2 bytes` for the size `N` of the body (unsigned, big-endian).
 * `N bytes` for the body, an `ascii` encoded JSON object. It contains the property `type`, which defines the set of other properties in the message.
 
-See [Connection](TODO add link) class for implementation details in python.
+See [Connection](./python/towerfall/connection.py) class for implementation details in python.
 
 ## Management API
 
@@ -757,7 +757,7 @@ Management API also supports a `reset` message that can be used to choose the in
 }
 ```
 
-See [reset_test.py](TODO add link) for a full list of entities supported in reset.
+See [reset_test.py](./python/reset_test.py) for a full list of entities supported in reset.
 
 # Limitations
 
