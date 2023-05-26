@@ -208,7 +208,7 @@ Reply with `result`:
 }
 ```
 
-`update`
+### `update`
 
 Every frame, an `update` is sent to indicate the current state of the game:
 ```jsonc
@@ -740,7 +740,7 @@ Server again replies with a `result`, containing either success...
 }
 ```
 
-After successful `join`, this connection needs to be kept open to do all the communication for the entire match. The client waits for the game messages and reply accordingly, as explained in the [API](#api)
+After successful `join`, this connection needs to be kept open to do all the communication for the entire match. The client waits for the game messages and reply accordingly, as explained in the [API](#api).
 
 Management API also supports a `reset` message that can be used to choose the initial configuration of the entities in `sandbox` mode (trying to set the entities in any other mode doesn't take any effect).
 
@@ -763,6 +763,7 @@ See [reset_test.py](./python/reset_test.py) for a full list of entities supporte
 
 There are a few improvements that are tricky, but in theory possible. They might be implemented in the future:
 
+* Support for Linux and Mac.
 * Seamless integration with the game: no purple screens, enable AI in Archer selection screen.
 * Vectorized environments. Steam does not let multiple instances of a game run at the same time. But it would be possible to have one instance run multiple matches. This would be very useful for Reinforcement Learning approaches.
 
