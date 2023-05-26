@@ -111,7 +111,7 @@ while True:
 
 **Note:** The server communicates with each connection independently, so you **have** to read the game_state from all of them (if you don't, the socket buffer can become full over time and the connection will eventually fail).
 
-`SimpleAgent` is a minimalist implementation of an agent that shows how to read the state, make a decision, and reply with actions. The code in [python/agents/simple_agents.py](./python/agents/simple_agents.py) is extensively explained with comments, so take some time to read it thoroughly. It is a good place to start by making small improvements, like:
+`SimpleAgent` class is a minimalist implementation of an agent that shows how to read the state, make a decision, and reply with actions. The code in [python/agents/simple_agent.py](./python/agents/simple_agent.py) is extensively explained with comments, so take some time to read it thoroughly. It is a good place to start by making small improvements, like:
 
 * Shoot in more directions.
 * Dodge arrows.
