@@ -1,6 +1,8 @@
 
 A mod that enables AI to play the game [TowerFall Ascension](http://www.towerfall-game.com). Get started with code examples in python to create your AI to play with (or against).
 
+![A mod that enables AI to play the game TowerFall Ascension](./banner.png)
+
 # Installing
 
 Only tested on Windows at the moment.
