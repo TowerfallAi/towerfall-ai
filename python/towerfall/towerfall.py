@@ -13,6 +13,7 @@ from psutil import Popen
 from .connection import Connection
 
 _DEFAULT_STEAM_PATH_WINDOWS = 'C:/Program Files (x86)/Steam/steamapps/common/TowerFall'
+_ENV_TOWERFALL_PATH = 'TOWERFALL_PATH'
 
 class TowerfallError(Exception):
   pass
@@ -30,6 +31,14 @@ class Towerfall:
       towerfall_path: str = _DEFAULT_STEAM_PATH_WINDOWS,
       timeout: float = 2,
       verbose: int = 0):
+    if not os.path.exists(towerfall_path):
+      env_towerfall_path = os.environ.get(_ENV_TOWERFALL_PATH)
+      if env_towerfall_path:
+        if not os.path.exists(env_towerfall_path):
+          raise TowerfallError(f'\n\nInstallation path defined in env variable {_ENV_TOWERFALL_PATH} does not exist: {env_towerfall_path}. Make sure {_ENV_TOWERFALL_PATH} is set to the installation path of Towerfall.')
+        towerfall_path = env_towerfall_path
+      else:
+        raise TowerfallError(f'\n\nThe default installation path does not exist: {towerfall_path}. You have 2 options:\n  a) Set env variable {_ENV_TOWERFALL_PATH} with the installation path.\n  b) Set the towerfall_path parameter in Towerfall constructor with the installation path.')
     self.config: Mapping[str, Any] = config
     self.towerfall_path = towerfall_path
     self.towerfall_path_exe = os.path.join(self.towerfall_path, 'TowerFall.exe')
